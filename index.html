@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Greeting</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #f06, #48f);
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .highlight {
+            color: #ffeb3b;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .message {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+            margin-top: 10px;
+            color: #ffeb3b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello World From <span class="highlight" id="name">Sushil Dhakal</span></h1>
+        <div class="message" id="message">The website is under construction. Please visit later.</div>
+    </div>
+    <script>
+        const nameElement = document.getElementById('name');
+        const messageElement = document.getElementById('message');
+
+        nameElement.addEventListener('mouseenter', () => {
+            messageElement.style.display = 'block';
+        });
+
+        nameElement.addEventListener('mouseleave', () => {
+            messageElement.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
